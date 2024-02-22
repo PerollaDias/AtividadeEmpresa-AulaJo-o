@@ -12,7 +12,7 @@ namespace Atividade01_Aula_João
 {
     public partial class CadastroEmpresa : Form
     {
-     
+
         public CadastroEmpresa()
         {
             InitializeComponent();
@@ -76,21 +76,52 @@ namespace Atividade01_Aula_João
                 };
                 MessageBox.Show("Empresa cadastrada com sucesso!", "Cadastro efetuado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+
                 string texto = @"C:\Users\2022102020078\Desktop\atividadeJoão.Atividade01.txt";
-                using(StreamWriter sw = new StreamWriter(texto))
+                using (StreamWriter sw = new StreamWriter(texto))
                 {
-                    sw.WriteLine(MessageBox.Show($"CNPJ = {maskedTextBox1.Text}\n" + 
-                        $"Razão Social:{textBox2.Text}\n" + $"Nome Fatasia:{textBox1.Text}\n" 
+                    sw.WriteLine(MessageBox.Show($"CNPJ = {maskedTextBox1.Text}\n" +
+                        $"Razão Social:{textBox2.Text}\n" + $"Nome Fatasia:{textBox1.Text}\n"
                         + $"Situação:{comboBox1.Text}\n" +
                 $"Regime Tributário:{groupBox1.Text}\n" +
-                $"Data de iníco:{maskedTextBox2.Text}\n" + $"Telefone:{maskedTextBox3.Text}\n" 
+                $"Data de iníco:{maskedTextBox2.Text}\n" + $"Telefone:{maskedTextBox3.Text}\n"
                 + $"Capital:{textBox8.Text}\n" +
-                 $"Endereço:{textBox9.Text}\n" + $"Tipo:{groupBox2.Text}\n" + 
+                 $"Endereço:{textBox9.Text}\n" + $"Tipo:{groupBox2.Text}\n" +
                  $"Porte da Empresa:{groupBox3.Text}\n" + $"Juridica:{comboBox2.Text}\n"
-                 + $"Propreteratio:{textBox13.Text}\n" + $"Cpf do propretério:{textBox14.Text}\n"));
+                 + $"Proprietário:{textBox13.Text}\n" + $"Cpf do proprietário{textBox14.Text}\n"));
                 }
+
+
             }
-            
+
+        }
+
+        private void Verificar_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+            if (radioButton6.Checked)
+            {
+                Console.WriteLine("RadioButton 6 está marcado.");
+            }
+            else if (radioButton7.Checked)
+            {
+                Console.WriteLine("RadioButton 7 está marcado.");
+            }
+            else if (radioButton8.Checked)
+            {
+                Console.WriteLine("RadioButton 8 está marcado.");
+            }
+            else
+            {
+                Console.WriteLine("Nenhum RadioButton está marcado.");
+            }
+            //NÃO DEU CERTO A VERIFICAÇÃO!!!
         }
     }
 }
